@@ -22,10 +22,10 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.5.6
-      - name: Deploy to AWS
+      - name: Destroy infrastructure on AWS
         run: |
           # Add your deployment commands here
           terraform init
           terraform validate
           terraform plan
-          terraform apply -auto-approve
+          terraform destroy -auto-approve
